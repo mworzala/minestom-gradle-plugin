@@ -1,0 +1,8 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'com.minestom.gradle'
+
+jar.manifest.attributes 'Main-Class': 'demo.MainDemo',
+                        'Multi-Release': true

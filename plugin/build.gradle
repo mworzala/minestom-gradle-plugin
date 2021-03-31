@@ -1,0 +1,34 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '0.12.0'
+}
+
+group 'com.minestom'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:2.5.12'
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'com.minestom.gradle'
+            displayName = 'Minestom Gradle'
+            description = 'Configures repositories and dependencies for Minestom server or extension development.'
+            implementationClass = 'com.minestom.gradle.MinestomGradlePlugin'
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://minestom.com'
+    vcsUrl = 'https://github.com/minestom/minestom-gradle-plugin'
+    tags = ['minestom']
+}
